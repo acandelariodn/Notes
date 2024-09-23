@@ -37,11 +37,18 @@ export const MyCard = () => {
   // Función para eliminar una tarjeta específica
   const removeCard = (index) => {
     setCards((prevCards) => {
-      const updatedCards = prevCards.filter((_, i) => i !== index); // Filtramos y eliminamos la tarjeta seleccionada
+      const updatedCards = prevCards.filter((_, i) => i !== index);
       return updatedCards;
     });
-    setCardColors((prevColors) => prevColors.filter((_, i) => i !== index)); // También eliminamos su color asociado
+    setCardColors((prevColors) => prevColors.filter((_, i) => i !== index));
+  
+    // Si se elimina la tarjeta que está siendo editada, sal del modo de edición
+    if (editingIndex === index) {
+      setEditingIndex(null);
+      setEditedCard(null);
+    }
   };
+  
 
   // Función para iniciar el modo de edición de una tarjeta
   const startEditing = (index) => {
