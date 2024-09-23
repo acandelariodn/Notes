@@ -71,7 +71,7 @@ export const MyCard = () => {
 
   return (
     <div className="container">
-      <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+      <div className={`row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 ${cards.length === 1 ? 'justify-content-center' : ''}`}>
         {/* Iteramos sobre cada tarjeta y la mostramos */}
         {cards.map((card, index) => (
           <div className="col" key={index}>
