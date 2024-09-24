@@ -49,7 +49,6 @@ export const MyCard = () => {
     }
   };
   
-
   // Función para iniciar el modo de edición de una tarjeta
   const startEditing = (index) => {
     setEditingIndex(index); // Guardamos el índice de la tarjeta que se está editando
